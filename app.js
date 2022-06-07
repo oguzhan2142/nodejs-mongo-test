@@ -10,6 +10,9 @@ const uri =
 const burgerRoute = require("./routes/burger_route");
 const salesRoute = require("./routes/sales_route");
 
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 app.use(parser.json());
 app.use("/burger", burgerRoute);
 app.use("/sales", salesRoute);
