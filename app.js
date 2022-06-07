@@ -11,6 +11,7 @@ const burgerRoute = require("./routes/burger_route");
 const salesRoute = require("./routes/sales_route");
 
 app.get("/", (req, res) => {
+  console.log("logged index page");
   res.send("hello world");
 });
 app.use(parser.json());
@@ -22,6 +23,8 @@ try {
 } catch (error) {
   console.log(error);
 }
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Our app is running on port ${PORT}`);
 });
